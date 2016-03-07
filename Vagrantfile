@@ -47,6 +47,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell",
       path: PATH_TO_UNIVERSAL_VAGRANT + "scripts/LAMP-install.sh",
       args: "-v -r " + PROJECT_WEBROOT + " -n php5.6"
+
+  # Install silverstripe
+  config.vm.provision "shell",
+      inline: "composer create-project silverstripe/installer " + PROJECT_WEBROOT + " 3.3.1"
+
   # Download adminer
   config.vm.provision "shell",
       inline: "wget http://www.adminer.org/latest-mysql-en.php -O " + PROJECT_WEBROOT + "/adminer.php"
@@ -54,9 +59,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell",
       path: PATH_TO_UNIVERSAL_VAGRANT + "scripts/mysql.sh",
       args: "-v -d @__DBName__ -u @__DBUser__ -p @__DBPsw__"
-  config.vm.provision "shell",
-      path: PATH_TO_UNIVERSAL_VAGRANT + "scripts/composer.sh",
-      args: "-v -r " + PROJECT_WEBROOT
+#  config.vm.provision "shell",
+#      path: PATH_TO_UNIVERSAL_VAGRANT + "scripts/composer.sh",
+#      args: "-v -r " + PROJECT_WEBROOT
   config.vm.provision "shell",
       inline: "sed -e '/^bind\-address/ s/^#*/#/' -i /etc/mysql/my.cnf && service mysql restart"
 
