@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('vagrant-setup', function(){
-    gulp.src('./Vagrantfile')
+    gulp.src(['./Vagrantfile', '_ss_environment-dist.php'])
         .pipe(replace('@__PathToVagrant__', vagrantVariables.PathToVagrant))
         .pipe(replace('@__ProjectRoot__', vagrantVariables.ProjectRoot))
         .pipe(replace('@__ProjectName__', vagrantVariables.ProjectName))
@@ -25,6 +25,6 @@ gulp.task('vagrant-setup', function(){
             'mkdir '+ vagrantVariables.ProjectRoot + '/themes/',
             'cp -R node_modules/steel_theme/default-theme '+ vagrantVariables.ProjectRoot + '/themes/default-theme',
             'mv '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.npmignore '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.gitignore',
-            'cp -R node_modules/steel_theme/. ./'
+            //'cp -R node_modules/steel_theme/. ./'
         ]));
 });
