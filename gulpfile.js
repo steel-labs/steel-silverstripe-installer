@@ -18,6 +18,7 @@ gulp.task('vagrant-setup', function(){
 
     gulp.src('*.js', {read: false})
         .pipe(shell([
+            'rm vagrant-variables.json',
             'vagrant up',
             'git clone git@github.com:silverstripe/silverstripe-installer.git',
             'cp -R silverstripe-installer/* '+ vagrantVariables.ProjectRoot +'/',
@@ -28,6 +29,9 @@ gulp.task('vagrant-setup', function(){
             'cp -R node_modules/steel_theme/node_modules/. ./node_modules',
             'cp -R node_modules/steel_theme/default-theme '+ vagrantVariables.ProjectRoot + '/themes/default-theme',
             'mv '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.npmignore '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.gitignore',
-            'cp node_modules/steel_theme/. ./'
+            'cp node_modules/steel_theme/bower.json ./',
+            'cp node_modules/steel_theme/package.json ./',
+            'cp node_modules/steel_theme/variables.json ./',
+            'cp node_modules/steel_theme/gulpfile.js ./'
         ]));
 });
