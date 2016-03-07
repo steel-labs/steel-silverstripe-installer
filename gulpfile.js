@@ -24,6 +24,9 @@ gulp.task('vagrant-setup', function(){
             'rm -Rf silverstripe-installer/',
             'mkdir '+ vagrantVariables.ProjectRoot + '/themes/',
             'cp -R node_modules/steel_theme/default-theme '+ vagrantVariables.ProjectRoot + '/themes/default-theme',
+            'cp -R node_modules/steel_theme/bower_components/. ./bower_components',
+            'cp -R node_modules/steel_theme/node_modules/. ./node_modules',
+            'cp -R node_modules/steel_theme/default-theme '+ vagrantVariables.ProjectRoot + '/themes/default-theme',
             'mv '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.npmignore '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.gitignore',
             'cp node_modules/steel_theme/. ./'
         ]));
