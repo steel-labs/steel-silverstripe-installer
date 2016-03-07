@@ -1,7 +1,7 @@
 {
+  "ProjectName" : "ProjectName",
   "PathToVagrant" : "../universal-vagrant-peach/",
-  "ProjectRoot":"/vagrant/webroot",
-  "HostName" : "ClientName",
+  "ProjectRoot":"webroot",
   "DBName":"Database",
   "DBUser":"User",
   "DBPsw":"Password",
