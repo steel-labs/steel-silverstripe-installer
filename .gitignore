@@ -1,8 +1,10 @@
-*.iml
 .idea/
+.vagrant/
+*.ipr
+*.iws
 /out/
 .idea_modules/
 
 node_modules/
 bower_components/
-
+secret.json

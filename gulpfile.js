@@ -18,6 +18,12 @@ gulp.task('vagrant-setup', function(){
 
     gulp.src('*.js', {read: false})
         .pipe(shell([
-            'vagrant up'
+            'vagrant up',
+            'git clone git@github.com:silverstripe/silverstripe-installer.git',
+            'cp -R silverstripe-installer/* '+ vagrantVariables.ProjectRoot +'/',
+            'rm -Rf silverstripe-installer/',
+            'mkdir '+ vagrantVariables.ProjectRoot + '/themes/',
+            'cp -R node_modules/steel_theme/default-theme '+ vagrantVariables.ProjectRoot + '/themes/default-theme',
+            'mv '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.npmignore '+ vagrantVariables.ProjectRoot + '/themes/default-theme/.gitignore'
         ]));
 });

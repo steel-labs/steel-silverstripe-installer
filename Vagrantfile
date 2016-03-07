@@ -48,10 +48,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       path: PATH_TO_UNIVERSAL_VAGRANT + "scripts/LAMP-install.sh",
       args: "-v -r " + PROJECT_WEBROOT + " -n php5.6"
 
-  # Install silverstripe
-  config.vm.provision "shell",
-      inline: "composer create-project silverstripe/installer " + PROJECT_WEBROOT + " 3.3.1"
-
   # Download adminer
   config.vm.provision "shell",
       inline: "wget http://www.adminer.org/latest-mysql-en.php -O " + PROJECT_WEBROOT + "/adminer.php"
