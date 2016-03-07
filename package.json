@@ -11,6 +11,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-copy": "0.0.2",
+    "gulp-replace": "^0.5.4",
     "steel_theme": "git+https://github.com/steel-labs/steel-base-theme.git"
   }
 
