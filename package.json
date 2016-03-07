@@ -12,6 +12,7 @@
     "gulp": "^3.9.1",
     "gulp-copy": "0.0.2",
     "gulp-replace": "^0.5.4",
+    "gulp-shell": "^0.5.2",
     "steel_theme": "git+https://github.com/steel-labs/steel-base-theme.git"
   }
 
