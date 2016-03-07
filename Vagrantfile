@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Basic box
   config.vm.box = "precise32"
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
-  config.vm.hostname = "@__HostName__"
+  config.vm.hostname = "@__ProjectName__"
 
   # Networking: port forwarding
   config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
