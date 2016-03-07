@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "post-install": "gulp vagrant-setup",
+    "postinstall": "gulp vagrant-setup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
