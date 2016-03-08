@@ -21,7 +21,7 @@ gulp.task('vagrant-setup', function(){
             'mkdir '+ vagrantVariables.ProjectRoot,
             'rm vagrant-variables.json',
             'vagrant up',
-            'git clone git@github.com:silverstripe/silverstripe-installer.git',
+            'git clone git@github.com:silverstripe/silverstripe-installer.git -b master',
             'cp -R silverstripe-installer/* '+ vagrantVariables.ProjectRoot +'/',
             'rm -rf silverstripe-installer/',
             'mkdir '+ vagrantVariables.ProjectRoot + '/themes/',
