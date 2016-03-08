@@ -17,7 +17,7 @@ VAGRANTFILE_API_VERSION = "2"
 # Change the path to universal-vagrant, including a trailing slash
 PATH_TO_UNIVERSAL_VAGRANT = "@__PathToVagrant__"
 
-PROJECT_WEBROOT = "vagrant/@__ProjectRoot__"
+PROJECT_WEBROOT = "/vagrant/@__ProjectRoot__"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
