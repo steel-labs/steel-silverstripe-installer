@@ -6,9 +6,9 @@ define('STEEL_ENVIRONMENT', 'dev');
 
 /* Database connection */
 define('SS_DATABASE_SERVER', 'localhost');
-define('SS_DATABASE_USERNAME', '@__DBName__'); // note: you need to use the root account to run tests!
-define('SS_DATABASE_PASSWORD', '@__DBUser__');
-define('SS_DATABASE_NAME', '@__DBPsw__');
+define('SS_DATABASE_USERNAME', '@__DBUser__'); // note: you need to use the root account to run tests!
+define('SS_DATABASE_PASSWORD', '@__DBPsw__');
+define('SS_DATABASE_NAME', '@__DBName__');
 
 //set the DB name - this provide backwards compatibility with 2.x and 3.0 sites
 global $database;
